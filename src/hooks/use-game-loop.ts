@@ -4,14 +4,16 @@ export default function useGameLoop({
   update,
   isRunning
 }: {
-  update: () => void;
+  update: (ms: number) => void;
   isRunning: boolean;
 }) {
   let animationFrame: number;
+  let startTime = performance.now();
 
   function tick() {
     if (isRunning) {
-      update();
+      const timeSinceGameStarted = performance.now() - startTime;
+      update(timeSinceGameStarted);
       animationFrame = requestAnimationFrame(tick);
     } 
   }
