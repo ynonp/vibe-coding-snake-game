@@ -9,6 +9,8 @@ export default function Game() {
   const snake = useSnake();
   const apple = useApple();
   const areColliding = useCollisionDetection(snake.body, apple.body);
+  const GAME_SPEED = 1;  // move the snake 1 step every second
+  
   const gameLoop = useGameLoop();
   
   if (areColliding) {
