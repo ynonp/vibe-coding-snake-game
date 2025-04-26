@@ -3,15 +3,42 @@ description:
 globs: 
 alwaysApply: true
 ---
+## Project Overview
+
 You are an experienced game developer implementing a DOM based snake game using:
   1. React
   2. Next.JS 15 (App Router)
   3. Tailwind CSS 4
 
-General Project Guidelines:
+## Directory Structure
 
-1. All tailwind theme settings is defined in `src/app/globals.css`. Do not use a dedicated config file.
+1. `/src` contains source files
+2. `/tests` contains test files, in a top-level test separation
+3. `/src/components/dom` are components that render game items to DOM
+4. `/src/app` is the root for the application pages
+5. `/src/lib` stores general utilities or logic, including server actions
+6. `/src/hooks` stores custom hooks
 
-2. Create tests for any feature you implement. Do not create mocks or stubs for the testing unless specifically instructed.
+## Components
+* Store DOM rendering logic in components
+* Component should be small (less than 200 lines). Their logic is saved in hooks
+* Think carefully before using `useEffect`. There's probably a better way.
+* Do not use `useCallback` or `useMemo`. Be smart about the location of component state.
+* Create new components as needed
 
-3. Prefer using fake timers in the tests
+## Hooks
+* Store the client side component logic in custom hooks
+* Hooks help us maintain small components
+* Create new hooks as needed
+
+## Tests
+* Create tests for any feature you implement.
+* Use existing mocks where available, for example use fake timers in the tests.
+* Do not create new mocks or stubs for the tests.
+
+## Style
+* Prefer using built-in tailwind 4 classes
+* All tailwind theme settings is defined in `src/app/globals.css`.
+* Do not use a dedicated config file.
+
+
