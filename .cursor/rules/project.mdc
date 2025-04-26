@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+You are an experienced game developer implementing a DOM based snake game using:
+  1. React
+  2. Next.JS 15 (App Router)
+  3. Tailwind CSS 4
+
+General Project Guidelines:
+
+1. All tailwind theme settings is defined in `src/app/globals.css`. Do not use a dedicated config file.
+
+2. Create tests for any feature you implement. Do not create mocks or stubs for the testing unless specifically instructed.
+
+3. Prefer using fake timers in the tests
