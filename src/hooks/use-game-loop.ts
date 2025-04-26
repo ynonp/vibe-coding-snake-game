@@ -7,10 +7,17 @@ export default function useGameLoop({
   update: () => void;
   isRunning: boolean;
 }) {
-  useEffect(() => {
+  let animationFrame: number;
+
+  function tick() {
     if (isRunning) {
-      const animationFrame = requestAnimationFrame(update);
-      return () => cancelAnimationFrame(animationFrame);
-    }
+      update();
+      animationFrame = requestAnimationFrame(tick);
+    } 
+  }
+
+  useEffect(() => {
+    tick();
+    return () => cancelAnimationFrame(animationFrame);
   }, [isRunning]);
 }
