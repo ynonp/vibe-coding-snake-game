@@ -9,8 +9,10 @@ import { coordinatesToStyle } from '@/lib/utils';
 export default function Apple({ apple }: { apple: Apple }) {
   return (
     <div
-      className="w-5 h-5 inline-block absolute text-2xl"
+      className={`w-5 h-5 inline-block absolute text-2xl ${apple.type === 'gold' ? 'text-yellow-500' : 'text-red-600'}`}
       style={coordinatesToStyle(apple.body)}
-     >🍎️</div>
+    >
+      {apple.type === 'gold' ? '🌟' : '🍎'}
+    </div>
   )
 }

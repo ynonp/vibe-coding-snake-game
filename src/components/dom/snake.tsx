@@ -12,7 +12,7 @@ export default function Snake({ snake }: { snake: Snake }) {
       {snake.body.map((c, i) => (
         <div        
           key={i}
-          className='w-5 h-5 bg-amber-900 absolute m-0 p-0'
+          className={`w-5 h-5 absolute m-0 p-0 rounded-sm ${i === 0 ? 'bg-green-600' : 'bg-green-500'}`}
           style={coordinatesToStyle(c)}
         />
       ))}
