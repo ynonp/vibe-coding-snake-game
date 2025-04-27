@@ -3,6 +3,13 @@ export type GameObject = Coordinates | Array<Coordinates>;
 export type Snake = {
   body: Array<Coordinates>;
   direction: Direction;
+  update: () => void,
+  grow: (addition: number) => void,
+};
+
+export type Apple = {
+  body: Coordinates;
+  type: 'regular' | 'gold'
 };
 
 export type Coordinates = {
